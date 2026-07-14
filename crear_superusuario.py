@@ -2,11 +2,11 @@ import os
 import django
 
 os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", 
+    "DJANGO_SETTINGS_MODULE",
     "Inmobiliaria.settings"
-    )
+)
 
-    django.setup()
+django.setup()
 
 from django.contrib.auth import get_user_model
 
