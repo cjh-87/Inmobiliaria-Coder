@@ -28,8 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
+    "inmobiliaria-coder.onrender.com",
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://inmobiliaria-coder.onrender.com",
+]
 
 # Application definition
 
