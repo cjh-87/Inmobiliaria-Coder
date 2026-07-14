@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "inmobiliaria-coder.onrender.com",
 ]
+
 CSRF_TRUSTED_ORIGINS = [
     "https://inmobiliaria-coder.onrender.com",
 ]
