@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from propiedades.models import Propiedad
 from propiedades.forms import PropiedadForm
-
+from django.contrib.auth.decorators import login_required
 
 def listar_propiedades(request):
 
@@ -14,7 +14,7 @@ def listar_propiedades(request):
     )
 
 
-
+@login_required
 def crear_propiedad(request):
 
     if request.method == "POST":
@@ -41,6 +41,7 @@ def crear_propiedad(request):
         {"form": formulario}
     )
 
+@login_required
 def editar_propiedad(request, id):
 
     propiedad = get_object_or_404(
@@ -79,7 +80,7 @@ def editar_propiedad(request, id):
     )
 
 
-
+@login_required
 def eliminar_propiedad(request, id):
 
     propiedad = get_object_or_404(

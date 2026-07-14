@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect
 from clientes.forms import ClienteForm
 from clientes.models import Cliente
 
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def crear_cliente(request):
 
     if request.method == "POST":

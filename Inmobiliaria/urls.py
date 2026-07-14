@@ -27,6 +27,7 @@ urlpatterns = [
     path("propietarios/", include("propietarios.urls")),
     path("clientes/", include("clientes.urls")),
     path("propiedades/", include("propiedades.urls")),
+    path("usuarios/", include("usuarios.urls")),
 ]
 
 urlpatterns += static(

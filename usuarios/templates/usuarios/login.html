@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<div class="container mt-4">
+
+    <h2>Ingreso de empleados</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-success">
+            Ingresar
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

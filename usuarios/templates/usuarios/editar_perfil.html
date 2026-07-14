@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Mi perfil</h2>
+
+{% if perfil.avatar %}
+
+    <img src="{{ perfil.avatar.url }}"
+         width="150"
+         class="img-thumbnail mb-3">
+
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button class="btn btn-primary">
+        Guardar cambios
+    </button>
+
+</form>
+
+{% endblock %}

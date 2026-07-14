@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-q&itj++$alq0be**3rcv4_xy&$kq!5lbb1f&!9_wvz^pa)l=%6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'propiedades',
     'propietarios',
     'clientes',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
@@ -119,5 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL = "/usuarios/login/"

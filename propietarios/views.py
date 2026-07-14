@@ -3,7 +3,10 @@ from django.shortcuts import render, redirect
 from propietarios.forms import PropietarioForm
 from propietarios.models import Propietario
 
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def crear_propietario(request):
 
     if request.method == "POST":
@@ -45,6 +48,7 @@ def listar_propietarios(request):
         {"propietarios": propietarios}
     )
 
+@login_required
 def eliminar_propietario(request, id):
 
     propietario = Propietario.objects.get(id=id)
@@ -53,6 +57,7 @@ def eliminar_propietario(request, id):
 
     return redirect("listar_propietarios")
 
+@login_required
 def editar_propietario(request, id):
 
     propietario = Propietario.objects.get(id=id)
