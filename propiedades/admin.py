@@ -1,3 +1,5 @@
 from django.contrib import admin
+from propiedades.models import Propiedad
 
-# Register your models here.
+
+admin.site.register(Propiedad)
