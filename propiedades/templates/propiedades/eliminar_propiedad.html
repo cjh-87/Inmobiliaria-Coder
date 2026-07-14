@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+
+<div class="container mt-4">
+
+
+    <h2>Eliminar Propiedad</h2>
+
+
+    <p>
+        ¿Seguro que desea eliminar:
+        <strong>{{ propiedad.titulo }}</strong>?
+    </p>
+
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+
+        <button class="btn btn-danger">
+            Sí, eliminar
+        </button>
+
+
+        <a href="/propiedades/" class="btn btn-secondary">
+            Cancelar
+        </a>
+
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+
+<div class="container mt-4">
+
+
+<div class="card shadow">
+
+
+{% if propiedad.imagen %}
+
+<img src="{{ propiedad.imagen.url }}"
+     class="card-img-top"
+     style="height:400px; object-fit:cover;">
+
+{% endif %}
+
+
+
+<div class="card-body">
+
+
+<h2>
+{{ propiedad.titulo }}
+</h2>
+
+
+<p>
+<strong>Dirección:</strong>
+{{ propiedad.direccion }}
+</p>
+
+
+<p>
+<strong>Localidad:</strong>
+{{ propiedad.localidad }}
+</p>
+
+
+<p>
+<strong>Tipo:</strong>
+{{ propiedad.tipo }}
+</p>
+
+
+<p>
+<strong>Ambientes:</strong>
+{{ propiedad.ambientes }}
+</p>
+
+
+<p>
+<strong>Precio:</strong>
+${{ propiedad.precio }}
+</p>
+
+
+<p>
+<strong>Estado:</strong>
+{{ propiedad.estado }}
+</p>
+
+
+
+<a href="/propiedades/"
+class="btn btn-secondary">
+
+Volver
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

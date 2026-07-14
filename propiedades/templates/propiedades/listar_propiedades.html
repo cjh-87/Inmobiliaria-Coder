@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+
+<div class="container mt-4">
+
+
+<h2 class="mb-4">
+    Propiedades disponibles
+</h2>
+
+
+
+<div class="row">
+
+
+{% for propiedad in propiedades %}
+
+
+<div class="col-md-4 mb-4">
+
+
+<div class="card shadow">
+
+
+{% if propiedad.imagen %}
+
+<img src="{{ propiedad.imagen.url }}"
+     class="card-img-top"
+     height="220">
+
+{% else %}
+
+<div class="text-center p-5 bg-light">
+    Sin imagen
+</div>
+
+{% endif %}
+
+
+
+<div class="card-body">
+
+
+<h5 class="card-title">
+    {{ propiedad.titulo }}
+</h5>
+
+
+<p class="card-text">
+
+<strong>Dirección:</strong>
+{{ propiedad.direccion }}
+
+<br>
+
+
+<strong>Localidad:</strong>
+{{ propiedad.localidad }}
+
+<br>
+
+
+<strong>Tipo:</strong>
+{{ propiedad.tipo }}
+
+<br>
+
+
+<strong>Ambientes:</strong>
+{{ propiedad.ambientes }}
+
+<br>
+
+
+<strong>Precio:</strong>
+${{ propiedad.precio }}
+
+<br>
+
+
+<strong>Estado:</strong>
+{{ propiedad.estado }}
+
+</p>
+
+<a href="{% url 'detalle_propiedad' propiedad.id %}"
+   class="btn btn-primary">
+
+    Ver detalle
+
+</a>
+
+<a href="{% url 'editar_propiedad' propiedad.id %}"
+   class="btn btn-warning">
+
+Editar
+
+</a>
+
+
+<a href="{% url 'eliminar_propiedad' propiedad.id %}"
+   class="btn btn-danger">
+
+Eliminar
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% empty %}
+
+
+<h4>No hay propiedades cargadas</h4>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

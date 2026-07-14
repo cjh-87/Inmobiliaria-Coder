@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block contenido %}
+
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <h2>Propietarios</h2>
+
+    <a class="btn btn-primary" href="/propietarios/crear/">
+        Nuevo Propietario
+    </a>
+
+</div>
+
+
+
+<table class="table table-striped">
+
+    <thead class="table-dark">
+
+        <tr>
+
+            <th>Nombre</th>
+
+            <th>Apellido</th>
+
+            <th>Teléfono</th>
+
+            <th>Acciones</th>
+            
+        </tr>
+
+    </thead>
+
+
+    <tbody>
+
+
+        {% for propietario in propietarios %}
+
+        <tr>
+
+            <td>{{ propietario.nombre }}</td>
+
+            <td>{{ propietario.apellido }}</td>
+
+            <td>{{ propietario.telefono }}</td>
+
+            <td>
+                <a class="btn btn-warning btn-sm"
+                    href="/propietarios/editar/{{ propietario.id }}/">
+
+                     Editar
+
+                </a>
+                
+                <a class="btn btn-danger btn-sm"
+                    href="/propietarios/eliminar/{{ propietario.id }}/"
+                    onclick="return confirm('¿Está seguro que desea eliminar este propietario?');">
+
+                     Eliminar
+
+                </a>
+
+            </td>
+        </tr>
+
+
+        {% endfor %}
+
+
+    </tbody>
+
+
+</table>
+
+
+{% endblock %}
